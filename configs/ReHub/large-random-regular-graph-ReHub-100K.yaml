@@ -1,0 +1,68 @@
+out_dir: results
+metric_best: accuracy
+wandb:
+  use: True
+  project: LargeRandomRegularGraphs-ReHub
+  entity: <entity>
+dataset:
+  format: Custom-LargeRandomRegularGraphs
+  name: LargeRandomGraph-100000  # The number in the name modifies the number of nodes in the graph
+  task: graph
+  task_type: classification
+  transductive: False
+  node_encoder: True
+  node_encoder_name: LinearNode
+  node_encoder_bn: False
+  edge_encoder: True
+  edge_encoder_name: LinearEdge
+  edge_encoder_bn: False
+rehub:
+  prep: True
+  hubs_per_spoke: 3
+  num_hubs: 1.0
+  num_hubs_type: D
+  reassignment_strategy: k_closest_by_attention
+posenc_LapPE:
+  enable: False
+  eigen:
+    laplacian_norm: none
+    eigvec_norm: L2
+    max_freqs: 8
+  model: DeepSet
+  dim_pe: 8
+  layers: 2
+  raw_norm_type: none
+posenc_RWSE:
+  enable: False
+  kernel:
+    times_func: range(1,21)
+  model: Linear
+  dim_pe: 28
+  raw_norm_type: BatchNorm
+train:
+  mode: inference-only
+  batch_size: 1
+model:
+  type: ReHubModel
+  loss_fun: cross_entropy
+  edge_decoding: dot
+  graph_pooling: mean
+gt:
+  layer_type: GCN+ReHub
+  layers: 3
+  n_heads: 4
+  dim_hidden: 52  # `gt.dim_hidden` must match `gnn.dim_inner`
+  dropout: 0.0
+  attn_dropout: 0.5
+  layer_norm: False
+  batch_norm: True
+gnn:
+  head: default
+  layers_pre_mp: 0
+  layers_post_mp: 1
+  dim_inner: 52  # `gt.dim_hidden` must match `gnn.dim_inner`
+  batchnorm: False
+  act: relu
+  dropout: 0.0
+  agg: mean
+  normalize_adj: False

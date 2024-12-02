@@ -1,0 +1,26 @@
+#!/bin/bash
+#SBATCH --mem=0                             # All of the memory available
+#SBATCH --gres=gpu:1                        # Request 1 gpu type L40
+#SBATCH --ntasks-per-node=1                 # This needs to match Trainer(devices=...)
+#SBATCH --nodes=1                           # This needs to match Trainer(num_nodes=...)
+##SBATCH --job-name="ReHub"
+#SBATCH -o .slurm_logs/out_job%j.txt        # stdout goes to out_job.txt
+#SBATCH -e .slurm_logs/err_job%j.txt        # stderr goes to err_job.txt
+#SBATCH --cpus-per-task=10
+
+date
+hostname
+pwd
+
+eval "$(conda shell.bash hook)"
+conda activate rehub
+
+cd $SLURM_SUBMIT_DIR
+pwd
+
+echo $@
+eval $@
+
+
+echo "All done in sbatch."
+date
