@@ -1,6 +1,6 @@
 # ReHub: Linear Complexity Graph Transformers with Adaptive Hub-Spoke Reassignment
 
-[![arXiv](https://img.shields.io/badge/arXiv-TODO-b31b1b.svg)](https://arxiv.org/abs/TODO)
+[![arXiv](https://img.shields.io/badge/arXiv-2412.01519-b31b1b.svg)](https://arxiv.org/abs/2412.01519)
 
 
 ![ReHub-method](./rehub_method.png)
@@ -76,5 +76,13 @@ Additional util files are available on:
 
 Our work can be cited using the following bibtex:
 ```bibtex
-TODO
+@misc{borreda2024rehublinearcomplexitygraph,
+      title={ReHub: Linear Complexity Graph Transformers with Adaptive Hub-Spoke Reassignment}, 
+      author={Tomer Borreda and Daniel Freedman and Or Litany},
+      year={2024},
+      eprint={2412.01519},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2412.01519}, 
+}
 ```
