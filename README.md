@@ -76,13 +76,13 @@ Additional util files are available on:
 
 Our work can be cited using the following bibtex:
 ```bibtex
-@misc{borreda2024rehublinearcomplexitygraph,
-      title={ReHub: Linear Complexity Graph Transformers with Adaptive Hub-Spoke Reassignment}, 
-      author={Tomer Borreda and Daniel Freedman and Or Litany},
-      year={2024},
-      eprint={2412.01519},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      url={https://arxiv.org/abs/2412.01519}, 
+@article{
+    borreda2025rehub,
+    title={ReHub: Linear Complexity Graph Transformers with Adaptive Hub-Spoke Reassignment},
+    author={Tomer Borreda and Daniel Freedman and Or Litany},
+    journal={Transactions on Machine Learning Research},
+    issn={2835-8856},
+    year={2025},
+    url={https://openreview.net/forum?id=L4S54TUOQR}
 }
 ```
